@@ -1,19 +1,21 @@
-import { AppProps } from 'next/app';
 import { withUrqlClient } from 'next-urql';
-import 'tailwindcss/tailwind.css'
-
-import '../styles/index.css';
+import { AppProps } from 'next/app';
+import 'tailwindcss/tailwind.css';
 import { GlobalFontVariables } from '../components/fonts';
 import { getUrqlClientConfig } from '../lib/api/client';
+import '../styles/index.css';
 
+import { ThemeProvider } from 'next-themes';
 import { Fragment } from 'react';
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
-		<Fragment>
-			 <GlobalFontVariables />
-			 <Component {...pageProps} />
-		</Fragment>
+		<ThemeProvider attribute="class" defaultTheme="dark">
+			<Fragment>
+				<GlobalFontVariables />
+				<Component {...pageProps} />
+			</Fragment>
+		</ThemeProvider>
 	);
 }
 
