@@ -1,6 +1,6 @@
 import { twJoin } from 'tailwind-merge';
+
 import { useAppContext } from './contexts/appContext';
-import { Button } from './custom-button';
 import HeaderBlogSearch from './header-blog-search';
 import HeaderLeftSidebar from './header-left-sidebar';
 import PublicationLogo from './publication-logo';
@@ -32,9 +32,8 @@ export const Header = (props: Props) => {
 					</div>
 
 					<div className={twJoin('flex flex-row items-center', 'dark:text-white')}>
-						<ToggleTheme />
 						<HeaderBlogSearch publication={publication} />
-						<Button as="a" href="#" type="primary" label="Sign up" />
+						<ToggleTheme />
 					</div>
 				</div>
 
