@@ -12,7 +12,6 @@ import PublicationSocialLinks from './publication-social-links';
 import useStickyNavScroll from './use-sticky-nav-scroll';
 
 import { PublicationFragment } from '../generated/graphql';
-import { Button } from './custom-button';
 import PublicationLogo from './publication-logo';
 
 type Props = {
@@ -29,15 +28,8 @@ const PostPageNavbar = forwardRef<HTMLElement, Props>((props, ref) => {
 	return (
 		<div className="container mx-auto px-2 md:px-4 md:py-1 2xl:px-10">
 			<div className="relative z-40 flex flex-row items-center justify-between pb-2 pt-8 md:py-4">
-				<div
-					className={twJoin(
-						'mb-2 flex flex-row items-center md:mb-0','dark:text-white',
-					)}
-				>
-					<HeaderTooltip
-						tooltipClassName="blog-home-tooltip"
-						tooltipText="Home"
-					>
+				<div className={twJoin('mb-2 flex flex-row items-center md:mb-0', 'dark:text-white')}>
+					<HeaderTooltip tooltipClassName="blog-home-tooltip" tooltipText="Home">
 						<Link
 							href="/"
 							aria-label="Back to blog home"
@@ -57,13 +49,8 @@ const PostPageNavbar = forwardRef<HTMLElement, Props>((props, ref) => {
 					</div>
 				</div>
 
-				<div
-					className={twJoin(
-						'flex flex-row items-center','dark:text-white',
-					)}
-				>
+				<div className={twJoin('flex flex-row items-center', 'dark:text-white')}>
 					<HeaderBlogSearch publication={publication} />
-					<Button as="a" href="#" type="primary" label="Sign up" />
 				</div>
 			</div>
 
